@@ -1,17 +1,39 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './Components/navbar'
+import { Resume } from './Constance'
+import ResumeCard from './Components/ResumeCard'
+import { createBrowserRouter, RouterProvider, Routes } from 'react-router-dom'
+import Home from './Components/pages/Home'
+import AppLayout from './Components/UI/AppLayout'
+import Auth from './Components/pages/Auth'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <AppLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />
+        },
+        {
+          path: '/auth',
+          element: <Auth />
+        }
+      ]
+    }
+  ])
 
   return (
-    <>
-      <h1 className='page-container'>Jai Shree Ram</h1>
-      <button className=' gradient-border'>Submit</button>
-    </>
+    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+      <RouterProvider router={router} />
+    </main>
   )
 }
+
+
 
 export default App
