@@ -8,6 +8,7 @@ import Home from './Components/pages/Home'
 import AppLayout from './Components/UI/AppLayout'
 import Auth from './Components/pages/Auth'
 import { usePuterStore } from './Lib/Puter'
+import Upload from './Components/pages/Upload'
 
 function App() {
 
@@ -23,6 +24,10 @@ function App() {
         {
           path: '/auth',
           element: <Auth />
+        },
+        {
+          path: '/upload',
+          element: <Upload />
         }
       ]
     }
