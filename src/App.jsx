@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Navbar from './Components/navbar'
 import { Resume } from './Constance'
@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Routes } from 'react-router-dom'
 import Home from './Components/pages/Home'
 import AppLayout from './Components/UI/AppLayout'
 import Auth from './Components/pages/Auth'
+import { usePuterStore } from './Lib/Puter'
 
 function App() {
 
@@ -27,10 +28,19 @@ function App() {
     }
   ])
 
+  const { init } = usePuterStore()
+  
+  useEffect(() => {
+    init()
+  }, [init])
+  
+
   return (
-    <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+    <>
+      {/* {window.puter.ai.chat()} */}
       <RouterProvider router={router} />
-    </main>
+    </>
+
   )
 }
 
