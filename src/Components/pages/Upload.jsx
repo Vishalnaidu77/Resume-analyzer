@@ -8,12 +8,24 @@ const Upload = () => {
     const [statusText, setStatusText] = useState('')
     const [file, setFile] = useState(null)
     
-    const handleFileSelect = () => {
+    const handleFileSelect = (file) => {
         setFile(file)
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.currentTarget.closest('form')
+        if (!form) return;
+        const formData = new FormData(form)
 
+        const companyName = formData.get('company-name')
+        const jobTitle = formData.get('job-title')
+        const description = formData.get('job-description')
+     
+        console.log({
+            companyName, jobTitle, description, file
+        });
+        
     }
 
   return (
@@ -35,15 +47,15 @@ const Upload = () => {
                         <form id='uplaod-form' onSubmit={handleSubmit} className='flex flex-col gap-4 mt-8'>
                             <div className='form-div'>
                                 <label htmlFor="company-name">Company Name</label>
-                                <input type="text" placeholder='Company name...' id='company-name'/>
+                                <input type="text" placeholder='Company name...' id='company-name' name='company-name'/>
                             </div>
                             <div className='form-div'>
                                 <label htmlFor="Job-Title">Job Title</label>
-                                <input type="text" placeholder='Job Title...' id='job-title'/>
+                                <input type="text" placeholder='Job Title...' id='job-title' name='job-title'/>
                             </div>
                             <div className='form-div'>
                                 <label htmlFor="Job-Description">Job Description</label>
-                                <textarea rows={5} placeholder='Job Description...' id='job-description'/>
+                                <textarea rows={5} placeholder='Job Description...' id='job-description' name='job-description'/>
                             </div>
                             <div className='form-div'>
                                 <label htmlFor="uploader">Upload Resume</label>
