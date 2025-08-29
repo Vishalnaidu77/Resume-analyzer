@@ -10,6 +10,7 @@ const FileUploader = ({ onFileSelect }) => {
     
   const onDrop = useCallback(acceptedFiles => {
     const file = acceptedFiles[0] || null
+    setFile(file)
     onFileSelect?.(file)
   }, [onFileSelect])
 
@@ -25,16 +26,35 @@ const FileUploader = ({ onFileSelect }) => {
         <div {...getRootProps()}>
             <input {...getInputProps()} />
             <div className='space-y-4 cursor-pointer'>
-                <div className='flex items-center justify-center mx-auto w-16 h-16'>
-                    <img src="/icons/info.svg" sizes='20'/>
-                </div>
+                
 
                 {file ? (
-                    <div>
-
+                    <div className='uploader-selected-file' onClick={(e) => e.stopPropagation()}>
+                        <img src="/images/pdf.png" alt="pdf" className='size-10' />
+                        <div className='flex items-center space-x-3'>
+                            <div className=''>
+                                <p className='text-sm text-gray-700 font-medium truncate max-w-xs'>
+                                    {file.name}
+                                </p>
+                                <p className='text-sm text-gray-500'>
+                                    {formatSize(file.size)}
+                                </p>
+                            </div>
+                        </div>
+                        <button className='p-2 cursor-pointer' onClick={(e) => {
+                            e.preventDefault()
+                            onFileSelect?.(null)
+                            console.log(e);
+                            
+                        }}>
+                            <img src="/icons/cross.svg" alt="remove" className='w-4 h-4' />
+                        </button>
                     </div>
                 ) : (
                     <div>
+                        <div className='flex items-center justify-center mx-auto w-16 h-16'>
+                            <img src="/icons/info.svg" sizes='20'/>
+                        </div>
                         <p className='text-lg to-gray-500 '>
                             <span className='font-semibold'>
                                 Click to upload
