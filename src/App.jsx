@@ -9,6 +9,7 @@ import AppLayout from './Components/UI/AppLayout'
 import Auth from './Components/pages/Auth'
 import { usePuterStore } from './Lib/Puter'
 import Upload from './Components/pages/Upload'
+import ResumeFeedback from './Components/pages/ResumeFeedback'
 
 function App() {
 
@@ -28,6 +29,10 @@ function App() {
         {
           path: '/upload',
           element: <Upload />
+        },
+        {
+          path: '/resumefeedback/:id',
+          element: <ResumeFeedback />
         }
       ]
     }

@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 export function formatSize(bytes) {
   if (bytes === 0) return "0 Bytes";
 
@@ -9,4 +11,4 @@ export function formatSize(bytes) {
   return `${size.toFixed(2)} ${units[i]}`;
 }
 
-export const generateUUID = () => crypto.randomUUID
+export const generateUUID = () => nanoid()

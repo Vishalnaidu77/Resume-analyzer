@@ -14,6 +14,7 @@ const Upload = () => {
     const [statusText, setStatusText] = useState('')
     const [file, setFile] = useState(null)
     
+
     const handleFileSelect = (file) => {
         setFile(file)
     }
@@ -48,7 +49,7 @@ const Upload = () => {
             companyName, jobTitle, jobDescription,
             feedback: '',
         }
-        await kv.set(`Resume:${uuid}`, JSON.stringify(data))
+        await kv.set(`resumefeedback:${uuid}`, JSON.stringify(data))
 
         setStatusText('Analyzing...')
 
@@ -65,9 +66,9 @@ const Upload = () => {
             : feedback.message.content[0].text;
 
         data.feedback = JSON.parse(feedbackText);
-        await kv.set(`resume${uuid}`, JSON.stringify(data))
+        await kv.set(`resumefeedback:${uuid}`, JSON.stringify(data))
         console.log(data);
-        
+        navigate(`/resumefeedback/${uuid}`)
     }
 
     function handleSubmit(e) {
