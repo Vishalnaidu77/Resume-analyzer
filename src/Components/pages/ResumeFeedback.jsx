@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { usePuterStore } from '../../Lib/Puter'
-import Summary from '../SUmmary';
 import Details from '../Details';
 import ATS from '../ATS';
+import Summary from '../SUmmary';
 
 
 
