@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { usePuterStore } from '../../Lib/Puter'
 import Details from '../Details';
-import ATS from '../ATS';
 import Summary from '../SUmmary';
 
 
@@ -75,7 +74,6 @@ const ResumeFeedback = () => {
           {feedback ? (
             <div className='flex flex-col gap-8 animate-in fade-in duration-1000'>
               <Summary feedback={feedback}/>
-              <ATS score={feedback || 0} suggestion={feedback.ATS}/>
               <Details feedback={feedback}/>
             </div>
           ) : 

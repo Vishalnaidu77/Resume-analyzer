@@ -4,10 +4,10 @@ const ScoreBadge = ({ score }) => {
   let badgeClass = "";
   let text = "";
 
-  if (score > 6.9) {
+  if (score > 69) {
     badgeClass = "bg-badge-green text-green-600";
     text = "Strong";
-  } else if (score > 4.9) {
+  } else if (score > 49) {
     badgeClass = "bg-badge-yellow text-yellow-600";
     text = "Good Start";
   } else {

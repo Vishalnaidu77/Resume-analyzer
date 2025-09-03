@@ -1,4 +1,10 @@
+import clsx from 'clsx';
 import { nanoid } from 'nanoid'
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs) => {
+  return twMerge(clsx(inputs))
+}
 
 export function formatSize(bytes) {
   if (bytes === 0) return "0 Bytes";

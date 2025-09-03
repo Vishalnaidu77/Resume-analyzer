@@ -225,6 +225,28 @@ export const AIResponseFormat = `
       };
     }`;
 
+
+export const aiFormatScores = `
+{
+  "overallRating": number, // 0-100
+  "ATS": {
+    "score": number // 0-100
+  },
+  "formatAndDesign": {
+    "score": number // 0-100
+  },
+  "contentQuality": {
+    "score": number // 0-100
+  },
+  "impactAndAchievements": {
+    "score": number // 0-100
+  }
+}
+`;
+
+
+   
+
 export const prepareInstructions = ({
   jobTitle,
   jobDescription,
@@ -239,6 +261,14 @@ export const prepareInstructions = ({
   If provided, take the job description into consideration.
   The job title is: ${jobTitle}
   The job description is: ${jobDescription}
-  Provide the feedback using the following format: ${AIResponseFormat}
+  Provide the detailed feedback strictly using the following format: ${AIResponseFormat}
+  Provide the numeric scores strictly using the following format: ${aiFormatScores}
   Return the analysis as a JSON object, without any other text and without the backticks.
-  Do not include any other text or comments.`;
+  Do not include any other text or comments.
+ 
+  Rules:
+  - Do not add or rename keys.
+  - Do not include any extra text, markdown, or comments.
+  - If you cannot determine a score, return 0.
+  - Always return a valid JSON object.
+  `;
