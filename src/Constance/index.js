@@ -244,9 +244,6 @@ export const aiFormatScores = `
 }
 `;
 
-
-   
-
 export const prepareInstructions = ({
   jobTitle,
   jobDescription,

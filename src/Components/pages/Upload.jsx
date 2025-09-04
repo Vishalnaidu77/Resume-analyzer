@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 import FileUploader from '../FileUploader'
 import { usePuterStore } from '../../Lib/Puter'
 import { useNavigate } from 'react-router-dom'

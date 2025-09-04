@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Resume } from '../../Constance'
 import ResumeCard from '../ResumeCard'
-import Navbar from '../navbar'
+import Navbar from '../Navbar'
 import { useNavigate } from 'react-router-dom'
 import { usePuterStore } from '../../Lib/Puter'
 

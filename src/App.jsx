@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Navbar from './Components/navbar'
+import Navbar from './Components/Navbar'
 import { Resume } from './Constance'
 import ResumeCard from './Components/ResumeCard'
 import { createBrowserRouter, RouterProvider, Routes } from 'react-router-dom'
