@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { usePuterStore } from '../../Lib/Puter'
 import Details from '../Details';
 import Summary from '../Summary';
-
+import Analysis from '../Analysis'
 
 
 const ResumeFeedback = () => {
@@ -48,14 +48,14 @@ const ResumeFeedback = () => {
   }, [id])
 
   return ( 
-    <main className="!pt-0 h-[100vh]">
+    <main className="!pt-0 min-h-[100vh] bg-[url('/images/bg-small.svg')] bg-cover">
       <nav className='resume-nav'>
         <Link to='/' className='back-button'>
           <img src="/icons/back.svg" alt="logo" className='w-2.5 h-2.5'/>
           <span className='text-gray-800 text-sm font-semibold'>Back to Homepage</span>
         </Link>
       </nav>
-      <div className="flex flex-row w-full max-lg:flex-col-reverse bg-[url('/images/bg-small.svg')] bg-cover">
+      <div className="flex flex-row w-full max-lg:flex-col-reverse">
         <section className="feedback-section  sticky top-0 items-center justify-center">
           {imageUrl && resumeUrl && (
             <div className='animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-2xl:h-fit w-fit'>
@@ -74,13 +74,24 @@ const ResumeFeedback = () => {
           {feedback ? (
             <div className='flex flex-col gap-8 animate-in fade-in duration-1000'>
               <Summary feedback={feedback}/>
-              <Details feedback={feedback}/>
+              <Analysis feedback={feedback}/>
             </div>
           ) : 
             <img src="/images/resume-scan-2.gif" className='w-full'/>
           }
         </section>
       </div>
+
+        <section className='flex flex-col gap-8 w-full px-16 max-lg:w-full py-6'>
+          <h2 className='text-4xl !text-black font-bold'>Recommendations for improvements:</h2>
+          {feedback ? (
+            <div className='flex flex-col gap-8 animate-in fade-in duration-1000'>
+              <Details feedback={feedback}/>
+            </div>
+          ) : 
+            ""
+          }
+        </section>
     </main>
   )
 }

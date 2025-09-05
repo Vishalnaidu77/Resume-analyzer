@@ -60,11 +60,11 @@ const CategoryContent = ({ tips }) => {
           <div
             key={index}
             className={cn(
-              // Slightly more colorful & interactive
-              "flex flex-col gap-2 rounded-2xl p-4 bg-gradient-to-r from-purple-50 to-white border border-purple-200 shadow hover:shadow-md transition duration-300"
+              // Softer, report-style
+              "flex flex-col gap-2 rounded-xl p-4 bg-white border border-gray-100 shadow-sm"
             )}
           >
-            <p className="text-base text-gray-700 leading-relaxed">{tip}</p>
+            <p className="text-base text-gray-800 leading-relaxed">{tip}</p>
           </div>
         ))}
       </div>
@@ -73,52 +73,43 @@ const CategoryContent = ({ tips }) => {
 };
 
 
-const Details = ({ feedback }) => {
+const Analysis = ({ feedback }) => {
         console.log(feedback.feedback.achievementsRecommendations);
         return (
                 <div className="flex flex-col gap-4 w-full">
+                    <h2 className='text-4xl !text-black font-bold'>More about this Resume:</h2>
                         <Accordion>
-                                <AccordionItem id="format-and-design">
-                                        <AccordionHeader itemId="format-and-design">
+                                <AccordionItem id="job-fit-analysis">
+                                        <AccordionHeader itemId="job-fit-analysis">
+                                                
                                                 <CategoryHeader
-                                                        title="Format & Design"
-                                                        categoryScore={feedback.formatAndDesign.score}
+                                                        title="Job Fit Analysis"
                                                 />
                                         </AccordionHeader>
-                                        <AccordionContent itemId="format-and-design">
-                                                <CategoryContent tips={feedback.feedback.formatAndDesignRecommendations} />
+                                        <AccordionContent itemId="job-fit-analysis">
+                                                <CategoryContent tips={feedback.feedback.jobFitAnalysis} />
                                         </AccordionContent>
                                 </AccordionItem>
-                                <AccordionItem id="content">
-                                        <AccordionHeader itemId="content">
+                                <AccordionItem id="weakness">
+                                        <AccordionHeader itemId="weakness">
                                                 <CategoryHeader
-                                                        title="Content"
+                                                        title="Weakness"
                                                         categoryScore={feedback.contentQuality.score}
                                                 />
                                         </AccordionHeader>
-                                        <AccordionContent itemId="content">
-                                                <CategoryContent tips={feedback.feedback.contentRecommendations} />
+                                        <AccordionContent itemId="weakness">
+                                                <CategoryContent tips={feedback.feedback.weaknesses} />
                                         </AccordionContent>
                                 </AccordionItem>
-                                <AccordionItem id="impact-and-achievements">
-                                        <AccordionHeader itemId="impact-and-achievements">
+                                <AccordionItem id="strength">
+                                        <AccordionHeader itemId="strength">
                                                 <CategoryHeader
-                                                        title="Impact & Achievements"
+                                                        title="Strengths"
                                                         categoryScore={feedback.impactAndAchievements.score}
                                                 />
                                         </AccordionHeader>
-                                        <AccordionContent itemId="impact-and-achievements">
-                                                <CategoryContent tips={feedback.feedback.achievementsRecommendations} />
-                                        </AccordionContent>
-                                </AccordionItem>
-                                <AccordionItem id="ats">
-                                        <AccordionHeader itemId="ats">
-                                                <CategoryHeader
-                                                        title="ATS"
-                                                />
-                                        </AccordionHeader>
-                                        <AccordionContent itemId="ats">
-                                                <CategoryContent tips={feedback.feedback.ATSRecommendations} />
+                                        <AccordionContent itemId="strength">
+                                                <CategoryContent tips={feedback.feedback.strengths} />
                                         </AccordionContent>
                                 </AccordionItem>
                         </Accordion>
@@ -126,4 +117,4 @@ const Details = ({ feedback }) => {
         );
 };
 
-export default Details;
+export default Analysis;
