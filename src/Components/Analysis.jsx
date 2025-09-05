@@ -74,7 +74,6 @@ const CategoryContent = ({ tips }) => {
 
 
 const Analysis = ({ feedback }) => {
-        console.log(feedback.feedback.achievementsRecommendations);
         return (
                 <div className="flex flex-col gap-4 w-full">
                     <h2 className='text-4xl !text-black font-bold'>More about this Resume:</h2>
@@ -87,29 +86,27 @@ const Analysis = ({ feedback }) => {
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="job-fit-analysis">
-                                                <CategoryContent tips={feedback.feedback.jobFitAnalysis} />
+                                                <CategoryContent tips={feedback.jobFitAnalysis} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="weakness">
                                         <AccordionHeader itemId="weakness">
                                                 <CategoryHeader
                                                         title="Weakness"
-                                                        categoryScore={feedback.contentQuality.score}
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="weakness">
-                                                <CategoryContent tips={feedback.feedback.weaknesses} />
+                                                <CategoryContent tips={feedback.weaknesses} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="strength">
                                         <AccordionHeader itemId="strength">
                                                 <CategoryHeader
                                                         title="Strengths"
-                                                        categoryScore={feedback.impactAndAchievements.score}
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="strength">
-                                                <CategoryContent tips={feedback.feedback.strengths} />
+                                                <CategoryContent tips={feedback.strengths} />
                                         </AccordionContent>
                                 </AccordionItem>
                         </Accordion>

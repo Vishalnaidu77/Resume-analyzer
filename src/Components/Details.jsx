@@ -74,7 +74,6 @@ const CategoryContent = ({ tips }) => {
 
 
 const Details = ({ feedback }) => {
-        console.log(feedback.feedback.achievementsRecommendations);
         return (
                 <div className="flex flex-col gap-4 w-full">
                         <Accordion>
@@ -82,33 +81,30 @@ const Details = ({ feedback }) => {
                                         <AccordionHeader itemId="format-and-design">
                                                 <CategoryHeader
                                                         title="Format & Design"
-                                                        categoryScore={feedback.formatAndDesign.score}
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="format-and-design">
-                                                <CategoryContent tips={feedback.feedback.formatAndDesignRecommendations} />
+                                                <CategoryContent tips={feedback.formatAndDesign.feedback} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="content">
                                         <AccordionHeader itemId="content">
                                                 <CategoryHeader
                                                         title="Content"
-                                                        categoryScore={feedback.contentQuality.score}
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="content">
-                                                <CategoryContent tips={feedback.feedback.contentRecommendations} />
+                                                <CategoryContent tips={feedback.contentQuality.feedback} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="impact-and-achievements">
                                         <AccordionHeader itemId="impact-and-achievements">
                                                 <CategoryHeader
                                                         title="Impact & Achievements"
-                                                        categoryScore={feedback.impactAndAchievements.score}
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="impact-and-achievements">
-                                                <CategoryContent tips={feedback.feedback.achievementsRecommendations} />
+                                                <CategoryContent tips={feedback.impactAndAchievements.feedback} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="ats">
@@ -118,7 +114,7 @@ const Details = ({ feedback }) => {
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="ats">
-                                                <CategoryContent tips={feedback.feedback.ATSRecommendations} />
+                                                <CategoryContent tips={feedback.ATSRecommendations} />
                                         </AccordionContent>
                                 </AccordionItem>
                         </Accordion>

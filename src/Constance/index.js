@@ -228,19 +228,27 @@ export const AIResponseFormat = `
 
 export const aiFormatScores = `
 {
-  "overallRating": number, // 0-100
   "ATS": {
-    "score": number // 0-100
+    "score": number, // 0–100
+    "feedback": [string]  // 3- 5 explanation of ATS suitability
   },
   "formatAndDesign": {
-    "score": number // 0-100
+    "score": number, // 0–100
+    "feedback": [string]  // 3- 5 explanation about design/layout
   },
   "contentQuality": {
-    "score": number // 0-100
+    "score": number, // 0–100
+    "feedback": [string]  // 3- 5  explanation about content depth/clarity
   },
   "impactAndAchievements": {
-    "score": number // 0-100
-  }
+    "score": number, // 0–100
+    "feedback": [string] // 3- 5 explanation about quantified impact & achievements
+  },
+  "strengths": [ string ], // 3–5 clear strengths
+  "weaknesses": [ string ], // 3–5 weaknesses
+  "ATSRecommendations": [ string ], // ATS-specific recommendations
+  "jobFitAnalysis": string, // short summary of how well resume matches job
+  "overallRating": number // 0–100
 }
 `;
 
