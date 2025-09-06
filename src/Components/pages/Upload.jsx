@@ -67,7 +67,6 @@ const Upload = () => {
 
         data.feedback = JSON.parse(feedbackText);
         await kv.set(`resumefeedback:${uuid}`, JSON.stringify(data))
-        console.log(data);
         navigate(`/resumefeedback/${uuid}`)
     }
 
@@ -84,7 +83,6 @@ const Upload = () => {
         if (!file) return
 
         handleAnalyse({ companyName, jobTitle, jobDescription, file })
-        console.log({ companyName, jobTitle });
         
     }
 

@@ -243,8 +243,6 @@ const detectAndExtractScores = (feedback) => {
 }
 
 const Summary = ({ feedback }) => {
-    console.log('Feedback received:', feedback);
-    
     // Use the extraction utility
     const { overallScore, extractedData } = extractRatingData(feedback);
     

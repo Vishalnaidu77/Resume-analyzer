@@ -40,7 +40,6 @@ const ResumeFeedback = () => {
       setImageUrl(imageUrl)
 
       setFeedback(data.feedback)
-      console.log({ resumeUrl, imageUrl, feedback: data.feedback});
       
     }
 

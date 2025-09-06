@@ -26,7 +26,7 @@ const Home = () => {
       JSON.parse(resume.value)
     ))
 
-    console.log(parsedResume);
+  
     setResumes(parsedResume || [])
     setLoadingResumes(false)
   }
