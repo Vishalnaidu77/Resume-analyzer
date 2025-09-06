@@ -150,3 +150,17 @@ form {
     opacity: 1;
   }
 }
+
+.smooth-gif {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

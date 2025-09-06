@@ -84,7 +84,7 @@ const Details = ({ feedback }) => {
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="format-and-design">
-                                                <CategoryContent tips={feedback.formatAndDesign.feedback} />
+                                                <CategoryContent tips={feedback.formatAndDesign.recommendations} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="content">
@@ -94,7 +94,7 @@ const Details = ({ feedback }) => {
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="content">
-                                                <CategoryContent tips={feedback.contentQuality.feedback} />
+                                                <CategoryContent tips={feedback.contentQuality.recommendations} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="impact-and-achievements">
@@ -104,7 +104,7 @@ const Details = ({ feedback }) => {
                                                 />
                                         </AccordionHeader>
                                         <AccordionContent itemId="impact-and-achievements">
-                                                <CategoryContent tips={feedback.impactAndAchievements.feedback} />
+                                                <CategoryContent tips={feedback.impactAndAchievements.recommendations} />
                                         </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem id="ats">

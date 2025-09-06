@@ -3,9 +3,9 @@ import ScoreGauge from './ScoreGauge'
 import ScoreBadge from './ScoreBadge'
 
 const Category = ({ title, score }) => {
-    const textColor = score > 7 
+    const textColor = score > 70
         ? 'text-green-600' 
-        : score > 4.9
+        : score > 49
         ? 'text-yellow-600' : 'text-red-600'
 
     return (
@@ -16,7 +16,7 @@ const Category = ({ title, score }) => {
                     <ScoreBadge score={score} />
                 </div>
                 <p className='text-2xl'>
-                    <span className={textColor}>{score}</span>/10
+                    <span className={textColor}>{score}</span>/100
                 </p> 
             </div>
         </div>
@@ -254,7 +254,7 @@ const Summary = ({ feedback }) => {
     // Get ATS score specifically for the gauge
     const atsScore = extractedData?.ats_compatibility || 
                     fallbackData.extractedData?.ats_compatibility || 
-                    (feedback?.ATS?.score ? feedback.ATS.score / 10 : 0);
+                    (feedback?.ATS?.score ? feedback.ATS.score : 0);
     
     const finalOverallScore = overallScore || fallbackData.overallScore;
     const finalScores = {

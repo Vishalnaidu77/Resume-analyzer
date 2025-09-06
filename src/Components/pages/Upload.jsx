@@ -84,7 +84,8 @@ const Upload = () => {
         if (!file) return
 
         handleAnalyse({ companyName, jobTitle, jobDescription, file })
-
+        console.log({ companyName, jobTitle });
+        
     }
 
   return (
@@ -97,7 +98,7 @@ const Upload = () => {
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
-                            <img src="/images/resume-scan.gif" className='w-full' />
+                            <img src="/images/resume-scan.gif" className='w-[200px] smooth-gif' />
                         </>
                     ) : (
                         <h2>Drop your resume for an ATS score and improvements tips</h2>

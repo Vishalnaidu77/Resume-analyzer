@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-const ScoreGauge = ({ score = 7.5 }) => {
+const ScoreGauge = ({ score = 50 }) => {
   const [pathLength, setPathLength] = useState(0);
   const pathRef = useRef(null);
 
-  const percentage = score / 10;
+  const percentage = score / 100;
 
   useEffect(() => {
     if (pathRef.current) {
@@ -52,7 +52,7 @@ const ScoreGauge = ({ score = 7.5 }) => {
         </svg>
 
         <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
-          <div className="text-xl font-semibold pt-4">{score}/10</div>
+          <div className="text-xl font-semibold pt-4">{score}/100</div>
         </div>
       </div>
     </div>

@@ -230,19 +230,19 @@ export const aiFormatScores = `
 {
   "ATS": {
     "score": number, // 0–100
-    "feedback": [string]  // 3- 5 explanation of ATS suitability
+    "recommendations": [string]  // 3- 5 explanation of ATS suitability
   },
   "formatAndDesign": {
     "score": number, // 0–100
-    "feedback": [string]  // 3- 5 explanation about design/layout
+    "recommendations": [string]  // 3- 5 explanation about design/layout
   },
   "contentQuality": {
     "score": number, // 0–100
-    "feedback": [string]  // 3- 5  explanation about content depth/clarity
+    "recommendations": [string]  // 3- 5  explanation about content depth/clarity
   },
   "impactAndAchievements": {
     "score": number, // 0–100
-    "feedback": [string] // 3- 5 explanation about quantified impact & achievements
+    "recommendations": [string] // 3- 5 explanation about quantified impact & achievements
   },
   "strengths": [ string ], // 3–5 clear strengths
   "weaknesses": [ string ], // 3–5 weaknesses

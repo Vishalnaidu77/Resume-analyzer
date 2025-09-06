@@ -77,7 +77,7 @@ const ResumeFeedback = () => {
               <Analysis feedback={feedback}/>
             </div>
           ) : 
-            <img src="/images/resume-scan-2.gif" className='w-full'/>
+            <img src="/images/resume-scan-2.gif" loading='lazy' className='w-full smooth-gif'/>
           }
         </section>
       </div>
